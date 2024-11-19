@@ -35,7 +35,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Hash password
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+// Debugging output
+/*if ($hashedPassword === false) {
+    die("Error hashing password");
+}
+echo "Hashed Password: " . $hashedPassword; // Check output*/
 
     // Timestamps
     $createdAt = $updatedAt = date("Y-m-d H:i:s");
@@ -53,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Insert user into the database with role = 2
     $stmt = $conn->prepare("INSERT INTO users (fname, lname, /*username,*/ email, password, role, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?,  ?)");
-    $stmt->bind_param("sssisss", $firstName, $lastName, /*$username,*/ $email, $hashedPassword, $role, $createdAt, $updatedAt);
+    $stmt->bind_param("ssssiss", $firstName, $lastName, /*$username,*/ $email, $hashedPassword, $role, $createdAt, $updatedAt);
 
     if ($stmt->execute()) {
         echo json_encode(['status' => 'success', 'message' => 'Registration successful.']);
