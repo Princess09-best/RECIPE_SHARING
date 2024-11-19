@@ -17,7 +17,7 @@
             </ul>
             <div class="rightNav">
                
-                <button class="btn btn-sm"><a href="views/recipe_feed.php">Get Started</a></button>
+                <button class="btn btn-sm"><a href="views/admin/recipe_feed.php">Get Started</a></button>
             </div>
         </nav>
       <section class="slideshow-container" >
@@ -26,19 +26,19 @@
 
             <div class="picslide fade">
               
-              <img src="images/slide 3.jpeg" style="width:100%">
+              <img src="assets/images/slide 3.jpeg" style="width:100%">
               <div class="text ">Welcome to RecipeShare!</div>
             </div>
             
             <div class="picslide fade">
              
-              <img src="images/slide 1.jpeg" style="width:100%">
+              <img src="assets/images/slide 1.jpeg" style="width:100%">
               <div class="text">Connecting people through food</div>
             </div>
             
             <div class="picslide fade">
             
-              <img src="images/slide 2.jpeg" style="width:100%">
+              <img src="assets/images/slide 2.jpeg" style="width:100%">
               <div class="text">Share your recipes and learn from others</div>
             </div>
             

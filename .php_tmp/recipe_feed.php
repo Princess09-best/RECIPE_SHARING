@@ -7,7 +7,7 @@
           content="width=device-width, initial-scale=1.0">
     <title>RecipeShare-</title>
     <link rel="stylesheet" 
-          type="text/css" href="../assets/css/recipefeed.css">
+          type="text/css" href="../../assets/css/recipefeed.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
     </div>
     <div class="recipecards grid-container">
         <div class="card grid-item">
-            <img src="../images/light-soup.webp" alt="Avatar" style="width:100%">
+            <img src="../../assets/images/light-soup.webp" alt="Avatar" style="width:100%">
             <div class="container">
               <h4><b>Light Soup</b></h4> 
               <p>Light soup, which originated as a tomato-and-seafood soup created by fishing communities in the coastal regions of Ghana's captial, Accra, is only light in comparison to Ghana's other, super-hearty soup-stews (peanut soup, okra soup).</p> 
@@ -30,7 +30,7 @@
             
           </div>
           <div class="card grid-item">
-            <img src="../images/jollof-rice.webp" alt="Avatar" style="width:100%">
+            <img src="../../assets/images/jollof-rice.webp" alt="Avatar" style="width:100%">
             <div class="container">
               <h4><b>Jollof Rice</b></h4> 
               <p>
@@ -45,7 +45,7 @@
             </div>
         </div>
         <div class="card grid-item">
-            <img src="../images/bofrot-doughtnuts.webp" alt="Avatar" style="width:100%">
+            <img src="../../assets/images/bofrot-doughtnuts.webp" alt="Avatar" style="width:100%">
             <div class="container">
               <h4><b>Bofrot</b></h4> 
               <p>
@@ -57,14 +57,14 @@
             </div>
         </div>
         <div class="card grid-item">
-            <img src="../images/koko-with-koose.webp" alt="Avatar" style="width:100%">
+            <img src="../../assets/images/koko-with-koose.webp" alt="Avatar" style="width:100%">
             <div class="container">
               <h4><b>Koko and koose</b></h4> 
               <p>AThick, hearty porridges are common choices. Among these, the fermented corn porridge koko is especially esteemed. Made from cornmeal and water (and sometimes, sweet, warm spices such as ginger and pepper) that are mixed together and allowed to ferment before cooking, the porridge has a distinctively tangy flavor from the fermentation, which eaters can complement (or tame) with the optional addition of sugar and/or evaporated milk. </p> 
             </div>
         </div>
         <div class="card grid-item ">
-            <img src="../images/ground nut soup.webp" alt="Avatar" style="width:100%">
+            <img src="../../assets/images/ground nut soup.webp" alt="Avatar" style="width:100%">
             <div class="container">
               <h4><b>groundnut soup</b></h4> 
               <p>
@@ -76,7 +76,7 @@
         
         </div>
         <div class="card grid-item ">
-            <img src="../images/okra-soup.webp" alt="Avatar" style="width:100%">
+            <img src="../../assets/images/okra-soup.webp" alt="Avatar" style="width:100%">
             <div class="container">
               <h4><b>Okra soup</b></h4> 
               <p>Okra is native to West Africa, and African cooks were the first to make use of it, making the slender green pods the star ingredient in a number of favorite dishes. Indeed, the word okra itself has African roots and comes from the Igbo word for the vegetable, "ókùrù.

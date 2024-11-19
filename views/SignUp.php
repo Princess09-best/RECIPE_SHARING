@@ -1,3 +1,21 @@
+<?php
+#display error messages
+session_start();
+if (isset($_SESSION['error_message'])) {
+    echo "<p style='color: red;'>" . $_SESSION['error_message'] . "</p>";
+    unset($_SESSION['error_message']); // Clear the error message after displaying
+}
+
+if (isset($_SESSION['success_message'])) {
+    echo "<p style='color: green;'>" . $_SESSION['success_message'] . "</p>";
+    unset($_SESSION['success_message']); // Clear the success message after displaying
+}
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -141,3 +159,5 @@
     }
 </script>
 </html>
+
+

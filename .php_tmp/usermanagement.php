@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Management-RecipeShare</title>
-    <link rel="stylesheet" href="../Recipes/recipemanagement.css">
+    <link rel="stylesheet" href="../../assets/css/recipemanagement.css">
     <script>
         // Email validation
         function validateEmail(email) {

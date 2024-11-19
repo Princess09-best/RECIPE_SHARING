@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../AdminDashBoard/dashboard.css">
-    <title>RecipeShare-users</title>
+    <link rel="stylesheet" href="../../assets/css/dashboard.css">
+    <title>Document</title>
+</head>
+<body>
     <div class="recent-invoices">
-        <h3>Users table</h3>
+        <h3>Recipes table</h3>
         <table>
             <thead>
                 <tr>
-                    <th>No</th>
-                    <th>ID Customer</th>
-                    <th>Customer Name</th>
-                    <th>email</th>
-                    <th>No.Recipes created</th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Date Created</th>
+                    <th>Category</th>
                     <th>actions</th>
                     
                 </tr>
@@ -25,7 +27,7 @@
                     <td>#065499</td>
                     <td>Aurélien Salomon</td>
                     <td>089 Kutch Green Apt. 448</td>
-                    <td>10</td>
+                    <td>Baked recipes</td>
                     <td><div class="dropdown">
                         <button class="dropbtn">...</button>
                         <div class="dropdown-content">
@@ -42,7 +44,7 @@
                     <td>#005455</td>
                     <td>Manuel Rovira</td>
                     <td>089 Kutch Green Apt. 448</td>
-                    <td>04 Sep 2019</td>
+                    <td>Fried recipes</td>
                     <td><div class="dropdown">
                         <button class="dropbtn">...</button>
                         <div class="dropdown-content">
@@ -58,7 +60,7 @@
                     <td>#005455</td>
                     <td>Manuel Rovira</td>
                     <td>089 Kutch Green Apt. 448</td>
-                    <td>04 Sep 2019</td>
+                    <td>Fried recipes</td>
                     <td><div class="dropdown">
                         <button class="dropbtn">...</button>
                         <div class="dropdown-content">
@@ -74,7 +76,7 @@
                     <td>#005455</td>
                     <td>Manuel Rovira</td>
                     <td>089 Kutch Green Apt. 448</td>
-                    <td>04 Sep 2019</td>
+                    <td>Fried recipes</td>
                     <td><div class="dropdown">
                         <button class="dropbtn">...</button>
                         <div class="dropdown-content">
@@ -90,7 +92,7 @@
                     <td>#005455</td>
                     <td>Manuel Rovira</td>
                     <td>089 Kutch Green Apt. 448</td>
-                    <td>04 Sep 2019</td>
+                    <td>Fried recipes</td>
                     <td><div class="dropdown">
                         <button class="dropbtn">...</button>
                         <div class="dropdown-content">
@@ -104,8 +106,5 @@
             </tbody>
         </table>
     </div>
-</head>
-<body>
-    
 </body>
 </html>

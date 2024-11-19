@@ -1,70 +1,54 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    require '../Database/config2.php';
+session_start();
+include '../Database/config.php'; // Include database connection
 
-    // Collect and sanitize inputs
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the data from the form
     $firstName = trim($_POST['firstname']);
     $lastName = trim($_POST['lastname']);
    // $username = trim($_POST['username']);
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
     $repeatPassword = trim($_POST['repeatPassword']);
+    $role = 2; // Default role is 2 (admin)
 
-    // Default role for all new users
-    $role = 2; // Regular Admin
-
-    // Validation
-    if (empty($firstName) || empty($lastName) /*|| empty($username)*/ || empty($email) || empty($password) || empty($repeatPassword)) {
-        echo json_encode(['status' => 'error', 'message' => 'All fields are required.']);
-        exit;
-    }
-
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo json_encode(['status' => 'error', 'message' => 'Invalid email format.']);
-        exit;
-    }
-
+    // Check if the passwords match
     if ($password !== $repeatPassword) {
-        echo json_encode(['status' => 'error', 'message' => 'Passwords do not match.']);
-        exit;
+        $_SESSION['error_message'] = "Passwords do not match.";
+        header("Location: ../views/SignUp.php");
+        exit();
     }
 
-    if (strlen($password) < 6) {
-        echo json_encode(['status' => 'error', 'message' => 'Password must be at least 6 characters long.']);
-        exit;
+    // Check if email already exists
+    $stmt = $conn->prepare("SELECT user_id FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        $_SESSION['error_message'] = "Email is already taken. Please use a different one.";
+        header("Location: ../views/SignUp.php");
+        exit();
     }
 
-    // Hash password
-$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    // Hash the password before storing it
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-// Debugging output
-/*if ($hashedPassword === false) {
-    die("Error hashing password");
-}
-echo "Hashed Password: " . $hashedPassword; // Check output*/
-
-    // Timestamps
-    $createdAt = $updatedAt = date("Y-m-d H:i:s");
-
-    // Check for duplicate email
-    $checkStmt = $conn->prepare("SELECT user_id FROM users WHERE email = ?");
-    $checkStmt->bind_param("s", $email);
-    $checkStmt->execute();
-    $checkStmt->store_result();
-    if ($checkStmt->num_rows > 0) {
-        echo json_encode(['status' => 'error', 'message' => 'Email already exists.']);
-        exit;
-    }
-    $checkStmt->close();
-
-    // Insert user into the database with role = 2
-    $stmt = $conn->prepare("INSERT INTO users (fname, lname, /*username,*/ email, password, role, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?,  ?)");
-    $stmt->bind_param("ssssiss", $firstName, $lastName, /*$username,*/ $email, $hashedPassword, $role, $createdAt, $updatedAt);
+    // Prepare and execute the SQL query to insert the new user into the database
+    $stmt = $conn->prepare("INSERT INTO users (fname, lname, /*username,*/ email, password, role, created_at, updated_at) VALUES (?, ?, ?,  ?, ?, NOW(), NOW())");
+    $stmt->bind_param("ssssi", $firstName, $lastName, /*$username,*/ $email, $hashedPassword, $role);
 
     if ($stmt->execute()) {
-        echo json_encode(['status' => 'success', 'message' => 'Registration successful.']);
+        // User successfully registered, redirect to login page
+        $_SESSION['success_message'] = "Registration successful! You can now log in.";
+        header("Location: ../views/SignIn.php");
+        exit();
     } else {
-        echo json_encode(['status' => 'error', 'message' => 'Failed to register user.']);
+        // If there was an error, display it
+        $_SESSION['error_message'] = "There was an error during registration. Please try again.";
+        header("Location: ../views/SignUp.php");
+        exit();
     }
 
     $stmt->close();
