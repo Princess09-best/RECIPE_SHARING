@@ -1,0 +1,61 @@
+html,body{
+    max-width: 100%;
+  overflow-x: hidden;
+  
+}
+
+body {
+    min-height: 100vh;
+  background-image: url('../../images/background-image.jpg'), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(105, 34, 21);
+  font-size: 2vw;
+}
+/* Bordered form */
+form {
+border: 3px solid black;
+text-align: center;
+background-color: rgba(255, 255, 255,0.5);
+border-radius: 50px;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password],input[type=email], select {
+width: 50%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 2px solid #7a5921;
+box-sizing: border-box;
+border-radius: 30px;
+}
+
+/* Set a style for all buttons */
+button {
+background-color: #aa6d04;
+color: white;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 30%;
+border-radius: 30px
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+opacity: 0.8;
+}
+
+
+
+/* Add padding to containers */
+.container {
+padding: 16px;
+}
+
+

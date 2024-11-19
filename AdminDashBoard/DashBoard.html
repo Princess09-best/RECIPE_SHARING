@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminDashBoard-Recipeshare</title>
+    <link rel="stylesheet" href="../AdminDashBoard/dashboard.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="../images/recipesharelogo.png" alt="Logo">
+        </div>
+        <ul class="menu">
+            <li><a class="link-item" href="../Users/usermanagement.html"><i class="fa-solid fa-user"></i><span>users</span></a></li>
+            <li><a class="link-item" href="../Recipes/recipesdisplay.html"><i class="fa-solid fa-bowl-food"></i><span>Recipes</span></a></li>
+           <!-- <li><a href="#"><i class="icon icon-reports"></i></a></li>
+            <li><a href="#"><i class="icon icon-settings"></i></a></li>-->
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="title">
+                <h1>RecipeShare-Admin✌️</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+        </header>
+
+        <section class="dashboard">
+            <div class="overview">
+                <div class="card">
+                    <h3>Total Users</h3>
+                    <p>500</p>
+                </div>
+                <div class="card">
+                    <h3>Total Recipes created</h3>
+                    <p>5,690</p>
+                </div>
+             <!--  <div class="card">
+                <h3>Total Transactions</h3>
+                <p>$2,262</p>
+            </div>
+            <div class="card">
+                <h3>Total Products</h3>
+                <p>2,100</p>
+            </div> -->
+            </div>
+
+            <div class="charts">
+                <div class="chart sales-chart">
+                    <canvas id="salesChart"></canvas>
+                </div>
+                <div class="chart category-chart">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+
+            <div class="sales-funnel">
+                <h3>Most Active Users</h3>
+               
+                <div class="funnel-chart">
+                    <canvas id="funnelChart"></canvas>
+                </div>
+            </div>
+            
+
+   
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/094e97acb7.js" crossorigin="anonymous"></script>
+
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
