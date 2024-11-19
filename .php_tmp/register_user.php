@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Insert user into the database with role = 2
     $stmt = $conn->prepare("INSERT INTO users (fname, lname, /*username,*/ email, password, role, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?,  ?)");
-    $stmt->bind_param("ssssisss", $firstName, $lastName, /*$username,*/ $email, $hashedPassword, $role, $createdAt, $updatedAt);
+    $stmt->bind_param("sssisss", $firstName, $lastName, /*$username,*/ $email, $hashedPassword, $role, $createdAt, $updatedAt);
 
     if ($stmt->execute()) {
         echo json_encode(['status' => 'success', 'message' => 'Registration successful.']);
