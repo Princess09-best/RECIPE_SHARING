@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Collect and sanitize inputs
     $firstName = trim($_POST['firstname']);
     $lastName = trim($_POST['lastname']);
-    $username = trim($_POST['username']);
+   // $username = trim($_POST['username']);
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
     $repeatPassword = trim($_POST['repeatPassword']);
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $role = 2; // Regular Admin
 
     // Validation
-    if (empty($firstName) || empty($lastName) || empty($username) || empty($email) || empty($password) || empty($repeatPassword)) {
+    if (empty($firstName) || empty($lastName) /*|| empty($username)*/ || empty($email) || empty($password) || empty($repeatPassword)) {
         echo json_encode(['status' => 'error', 'message' => 'All fields are required.']);
         exit;
     }
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $createdAt = $updatedAt = date("Y-m-d H:i:s");
 
     // Check for duplicate email
-    $checkStmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
+    $checkStmt = $conn->prepare("SELECT user_id FROM users WHERE email = ?");
     $checkStmt->bind_param("s", $email);
     $checkStmt->execute();
     $checkStmt->store_result();
@@ -52,8 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $checkStmt->close();
 
     // Insert user into the database with role = 2
-    $stmt = $conn->prepare("INSERT INTO users (first_name, last_name, username, email, password, role, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssisss", $firstName, $lastName, $username, $email, $hashedPassword, $role, $createdAt, $updatedAt);
+    $stmt = $conn->prepare("INSERT INTO users (fname, lname, /*username,*/ email, password, role, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssisss", $firstName, $lastName, /*$username,*/ $email, $hashedPassword, $role, $createdAt, $updatedAt);
 
     if ($stmt->execute()) {
         echo json_encode(['status' => 'success', 'message' => 'Registration successful.']);

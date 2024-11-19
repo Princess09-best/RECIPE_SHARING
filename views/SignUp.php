@@ -22,10 +22,10 @@
             </label>
             <input type="text" placeholder="Enter your last name" name="lastname" required><br><br>
             
-            <label for="username">
+        <!--    <label for="username">
                 <strong>Username</strong>
             </label>
-            <input type="text" placeholder="Enter your preferred username" name="username" required><br><br>
+            <input type="text" placeholder="Enter your preferred username" name="username" required><br><br> -->
 
             <label for="email">
                 <strong>Email</strong>
