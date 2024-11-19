@@ -8,7 +8,7 @@
 
 </head>
 <body>
-    <form name="signUpForm" onsubmit="return validateForm()" method="post" action="">
+    <form name="signUpForm" onsubmit="return validateForm()" method="post" action="../actions/register_user.php">
         <div class="formContainer">
             <h1>Welcome to RecipeShare!</h1>
             
@@ -42,15 +42,15 @@
             </label>
             <input type="password" placeholder="Repeat Password" name="repeatPassword" required><br><br>
 
-            <label>
+           <!--<label>
                 <strong>Role</strong>
             </label>
             <select name="role" id="role">
                 <option value="default">----</option>
                 <option value="User">User</option>
-                <option value="2">Admin</option>
+                <option value="Admin">Admin</option>
             </select>
-            <br><br>
+            <br><br>-->
 
             <label>
                 <input type="checkbox" name="remember" id="check">
