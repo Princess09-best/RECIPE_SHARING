@@ -1,5 +1,5 @@
 <?php
-$servername = "169.239.251.102"; //  database server
+$servername = "localhost"; //  database server
 $username = "princess.balogun"; //  database username
 $password = "ZyxB09$$"; //  database password
 $dbname = " webtech_fall2024_princess_balogun"; //  database name
