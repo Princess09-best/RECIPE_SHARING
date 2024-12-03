@@ -1,5 +1,10 @@
 <?php
 #display error messages
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 if (isset($_SESSION['error_message'])) {
     echo "<p style='color: red;'>" . $_SESSION['error_message'] . "</p>";
